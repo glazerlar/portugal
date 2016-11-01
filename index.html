@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Como Aderir NatGeo</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// Move logos above channel description on mobile
+				$(window).resize(function() {
+				    if( $(this).width() <= 599 ) {
+						$("#row-portugal .below").insertBefore("#row-portugal .above");
+				    }
+				});
+
+				// When clicking .slider, below will happen.
+				$('#row-portugal .slider').on('click', function(e) { 
+					// store ".img-wrap > img" DOM elm (as a jQuery format) in $img variable.
+					var $img = $(this).find('.img-wrap > img'); //<img src="img/logos/canal.png" alt="Canal" title="Canal" data-ch1="86" data-ch2="87" data-link="www.canalsat.fr/pid2220-chaine.html?chaine=561" />
+					
+					// Assign attributes for .ch-logo
+					$('#row-portugal').find('.ch-logo').attr('src',$img.attr('src'));
+					$('#row-portugal').find('.ch-logo').attr('alt',$img.attr('alt'));
+					$('#row-portugal').find('.ch-logo').attr('title',$img.attr('title'));
+
+					$('#row-portugal').find('.ch1').html('National Geographic<br />'+$img.attr('data-ch1'));
+					$('#row-portugal').find('.ch2').html('Nat Geo Wild<br />'+$img.attr('data-ch2'));
+					$('#row-portugal').find('.btn').attr('href','http://'+$img.attr('data-link'));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<img src="img/header.jpg" />
+			<div class="top-hat">
+			</div>
+			<div class="white-bg">
+			</div>
+		</header>
+		<div class="content-wrap">
+			<div class="top-content">
+				<h2>Como Aderir</h2>
+				<img src="img/NGlogo.png" alt="National Geographic" title="National Geographic" />
+				<img src="img/natGeoWILD.png" alt="Nat Geo Wild" title="Nat Geo Wild" />
+				<p>Os canais National Geographic Channel e Nat Geo Wild est&atilde;o dispon&iacute;veis nos seguintes operadores.</p>
+				<p class="small-text">Clique no seu operador para saber mais:</p>
+			</div>
+			<div class="row-wrap">
+				<div id="row-portugal" class="row clearfix">
+					<div class="one-third above">
+						<div class="one-third-wrapper">
+							<div class="img-height">
+								<div class="img-center">
+									<img class="ch-logo" src="img/logos/meo.png" alt="Meo" title="Meo" /> <!-- src, alt, title -->
+								</div>
+							</div>
+							<p class="small-text ch1">National Geographic<br />131 / (HD) 130</p> <!-- number -->
+							<p class="small-text ch2">Nat Geo Wild<br />133 / (HD) 132</p> <!-- number -->
+							<a class="btn" href="https://www.meo.pt/">Visite o site do seu operador</a> <!-- link -->
+						</div>
+					</div>
+					<div class="two-thirds clearfix below last">
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/meo.png" alt="Meo" title="Meo" data-ch1="131 / (HD) 130" data-ch2="133 / (HD) 132" data-link="www.meo.pt/" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/nos.png" alt="Nos" title="Nos" data-ch1="105 / (HD) 116" data-ch2="107 / (HD) 117" data-link="www.nos.pt/particulares/Pages/home.aspx" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third last">
+								<div class="img-wrap">
+									<img src="img/logos/vodafone.png" alt="Vodafone" title="Vodafone" data-ch1="132 / (HD) 131" data-ch2="134 / (HD) 133" data-link="www.vodafone.pt/main/particulares/" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/nowo.png" alt="Nowo" title="Nowo" data-ch1="25 / (HD) 220" data-ch2="(HD) 26" data-link="www.cabovisao.pt/" />
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<img src="img/footer.jpg" />
+		</footer>
+	</body>
+</html>
